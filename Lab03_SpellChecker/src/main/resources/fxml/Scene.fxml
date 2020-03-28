@@ -67,9 +67,9 @@
                      <children>
                         <HBox>
                            <children>
-                              <Label fx:id="labelError" disable="true" prefWidth="300.0" textFill="#dd0b0b">
+                              <Label fx:id="labelError" prefWidth="300.0" textFill="#dd0d0d">
                                  <padding>
-                                    <Insets left="150.0" top="3.0" />
+                                    <Insets left="150.0" top="2.0" />
                                  </padding>
                               </Label>
                               <Button fx:id="btnClearTxt" mnemonicParsing="false" onAction="#doClear" text="Clear Text">

@@ -7,10 +7,12 @@ import java.util.StringTokenizer;
 public class Model {
 	
 	private Dictionary dictionary;
+	private int errorNumber;
 	
 	public Model() {
+		
 		dictionary = new Dictionary();
-
+		errorNumber = 0;
 	}
 	
 	public String checkTest(String language, String input) {
@@ -37,23 +39,30 @@ public class Model {
 		
 		list = this.dictionary.spellCheckTest(inputList);
 		System.out.println(list.toString());
-
+		errorNumber = 0;
 		String result = "";
 		for(RichWord rw: list) {
-			if(!rw.isCorrect())
+			if(!rw.isCorrect()) {
+				errorNumber++;
 				if(result.equals(""))
 					result += rw.getWord();
 				else
 					result +="\n"+rw.getWord();
-			
+			}
 		}
 				
 		return result;
 		
+		
 	}
+	
 
 	
 	
+	public int getErrorNumber() {
+		return errorNumber;
+	}
+
 	public Dictionary getDictionary() {
 		return dictionary;
 	}	

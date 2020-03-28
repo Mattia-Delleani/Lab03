@@ -53,8 +53,10 @@ public class FXMLController {
     void doClear(ActionEvent event) {
     	txtCorrect.clear();
     	txtInput.clear();
-    	this.model = new Model();
-
+    	labelError.setVisible(false);
+    	labelTime.setVisible(false);
+    
+    	
     }
 
     @FXML
@@ -68,6 +70,10 @@ public class FXMLController {
     @FXML
     void doSpell(ActionEvent event) {
     	    	
+    	labelError.setVisible(true);
+    	labelTime.setVisible(true);
+    	long initialTime = System.nanoTime();
+    	
     	if(this.selectedLanguage == null) {
     		txtCorrect.setText("Selezionare una lingua per tradurre!");
     	}else {
@@ -78,8 +84,13 @@ public class FXMLController {
     			txtCorrect.setText("Non vi sono errori");
     		else {
     			txtCorrect.setText(error);
+    			if(model.getErrorNumber()==1)
+        			labelError.setText("The text contain "+ model.getErrorNumber()+ " error");
+    			else
+    				labelError.setText("The text contains "+ model.getErrorNumber()+ " errors");
     		}
-        		
+        	long endTime = System.nanoTime();
+        	labelTime.setText("Spell check time: " +(endTime-initialTime)/10e9+ " seconds");
     	}
     
     }
