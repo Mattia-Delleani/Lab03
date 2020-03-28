@@ -26,7 +26,7 @@ public class Model {
 		
 		List<String> inputList = new ArrayList<>();
 		List<RichWord> list;
-	
+		
 		//String[] st = input.split(" "); DOVREBBE ESSERE PIU PERFORMANTE
 
 		StringTokenizer st = new StringTokenizer(input);
@@ -37,7 +37,7 @@ public class Model {
 		
 		
 		
-		list = this.dictionary.spellCheckTest(inputList);
+		list = this.dictionary.spellCheckTestDichotomic(inputList);
 		System.out.println(list.toString());
 		errorNumber = 0;
 		String result = "";

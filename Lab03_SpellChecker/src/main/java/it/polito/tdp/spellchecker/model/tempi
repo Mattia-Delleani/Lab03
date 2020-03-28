@@ -1,0 +1,4 @@
+					ArrayList				LinkedList	
+Ricerca lineare:     0.0081						1.3s
+Ricerca dicotomica:  0.0007							0.59s				
+HashSet(contains):
