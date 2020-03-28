@@ -37,7 +37,7 @@ public class Model {
 		
 		
 		
-		list = this.dictionary.spellCheckTestDichotomic(inputList);
+		list = this.dictionary.spellCheckTestLinear(inputList);
 		System.out.println(list.toString());
 		errorNumber = 0;
 		String result = "";
